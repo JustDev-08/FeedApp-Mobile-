@@ -11,26 +11,26 @@ import CheckPage from './src/check.js'
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-     <NavigationContainer>
+    <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-  tabBarIcon: ({ focused, color, size }) => {
-    let iconName;
-    if (route.name === 'Feed') {
-      iconName = focused
-        ? 'paw-sharp'
-        : 'paw-outline';
-    } else if (route.name === 'Check') {
-      iconName = focused ? 'eye-sharp' : 'eye-outline';
-    }
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === 'Feed') {
+              iconName = focused
+                ? 'paw-sharp'
+                : 'paw-outline';
+            } else if (route.name === 'Check') {
+              iconName = focused ? 'eye-sharp' : 'eye-outline';
+            }
 
-    // You can return any component that you like here!
-    return <Ionicons name={iconName} size={size} color={color} />;
-  },
-  tabBarActiveTintColor: 'tomato',
-  tabBarInactiveTintColor: 'gray',
-})}
->
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+        })}
+      >
         <Tab.Screen name="Feed" component={FormPage} />
         <Tab.Screen name="Check" component={CheckPage} logo />
       </Tab.Navigator>
