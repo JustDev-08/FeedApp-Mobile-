@@ -8,8 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FormPage from './src/form.js'
 import CheckPage from './src/check.js'
 // As Tab
-const Tab = createBottomTabNavigator()
-
+const Tab = createBottomTabNavigator();
 export default function App() {
   return (
      <NavigationContainer>
@@ -17,7 +16,6 @@ export default function App() {
         screenOptions={({ route }) => ({
   tabBarIcon: ({ focused, color, size }) => {
     let iconName;
-
     if (route.name === 'Feed') {
       iconName = focused
         ? 'paw-sharp'

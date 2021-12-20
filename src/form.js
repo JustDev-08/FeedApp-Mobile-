@@ -13,7 +13,7 @@ function FormPage() {
   //wait Button
   const Button = ()=> {
     if (wait) {
-      return (d
+      return (
         <Button
           icon={
             <Icon
