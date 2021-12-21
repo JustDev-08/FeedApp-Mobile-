@@ -1,3 +1,5 @@
 {
-    "apiUrlFeed": "https://apiexpressbyme.herokuapp.com/feed/api/feed"
+    "apiUrlFeed": "https://apiexpressbyme.herokuapp.com/feed/api/feed",
+    "apiUrlCheck" :"https://apiexpressbyme.herokuapp.com/feed/api/can"
+
 }

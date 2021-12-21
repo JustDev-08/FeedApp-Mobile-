@@ -1,5 +1,5 @@
-import { View, Text, Image } from 'react-native'
-import { Input, Button } from 'react-native-elements';
+import { View, Text, Image, Alert } from 'react-native'
+import { Input } from 'react-native-elements';
 import React, { useState } from 'react'
 import ButtonWait from './component/button';
 import styles from './css/styles';
@@ -16,23 +16,28 @@ function FormPage() {
   const [status, setStatus] = useState('None')
 
   function sendApi() {
-    const data = {
-      "ml": ml,
-      "url": "https://" + url,
-      "control": "feed",
-      "password": password,
-      "topic": "/feed/board/pass/"
+    if (ml != '' && password != '' && url != '') {
+      const data = {
+        "ml": ml,
+        "url": "https://" + url,
+        "control": "feed",
+        "password": password,
+        "topic": "/feed/board/pass/"
+      }
+      axios.post(apiUrlFeed, data)
+        .then(res => {
+          setStatus(res.data.status)
+          console.log(res.data)
+          setWait(false)
+        }).catch((e) => {
+          setStatus('Cant use Api')
+          setWait(false)
+        })
+      setWait(true)
     }
-    axios.post(apiUrlFeed, data)
-      .then(res => {
-        setStatus(res.data.status)
-        console.log(res.data)
-        setWait(false)
-      }).catch((e) => {
-        setStatus('Cant use Api')
-        setWait(false)
-      })
-    setWait(true)
+    else {
+      Alert.alert('ไม่สามารถทำรายการได้', 'กรุณากรอกให้ครบทุกช่อง')
+    }
   }
   return (
     <View >
