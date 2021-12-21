@@ -23,7 +23,6 @@ export default function App() {
             } else if (route.name === 'Check') {
               iconName = focused ? 'eye-sharp' : 'eye-outline';
             }
-
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
