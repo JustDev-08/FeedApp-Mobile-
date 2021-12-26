@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.nunnan12.FeedApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
